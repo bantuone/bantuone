@@ -1,3 +1,4 @@
+import 'package:bantuone/auth_service.dart';
 import 'package:bantuone/core/constants/colors.dart';
 import 'package:bantuone/core/constants/image_path.dart';
 import 'package:bantuone/core/route/route_constants.dart';
@@ -21,31 +22,28 @@ class StartView extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
                     SizedBox(height: 100.h),
-
                     Container(
-                      child: Text("Selamat Datang di Bantuone", 
-                      style: TextStyle(color: white)
-                      ),
+                      child: Text("Selamat Datang di BantuOne",
+                          style: TextStyle(
+                              color: white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold)),
                     ),
                     Container(
                       width: 300.w,
-                      child: Text("Kesalamatan dan kenyamanan kamu merupakan prioritas nomor 1 kami!", 
-                      style: TextStyle(color: white)
-                      ),
+                      child: Text(
+                          "Kesalamatan dan kenyamanan kamu merupakan prioritas nomor 1 kami!",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: greyBlue, fontWeight: FontWeight.w500)),
                     ),
-
                     SizedBox(height: 100.h),
-
                     Container(
                       height: 200.h,
                       width: 200.w,
                       child: Image(image: AssetImage(logo)),
                     ),
-                    
-                    SizedBox(height: 100.h),
-
+                    SizedBox(height: 200.h),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
                       height: 42.h,
@@ -53,64 +51,26 @@ class StartView extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           primary: white,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
-                          ),
+                              borderRadius: BorderRadius.circular(10)),
                         ),
                         onPressed: () {
-                          // Navigator.pushNamed(
-                          //   context, 
-                          //   register,
-                          //   );
-                          showModalBottomSheet(
-                            context: context, 
-                            builder: ((context) => Center(
-                              child: ElevatedButton(
-                                onPressed: (() => Navigator.pop(context)),
-                                child: Text("close")),
-                            ))
-                          );
+                          AuthService().signInWithGoogle();
                         },
-                        child: Text("Register",
-                        style: TextStyle(color: black),
+                        child: Text(
+                          "Masuk",
+                          style: TextStyle(
+                              color: black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
                         ),
                       ),
                     ),
-
                     SizedBox(height: 50.h),
-
-                    Container(
-                      child: Text("Sudah memiliki akun?", 
-                      style: TextStyle(color: white)
-                      ),
-                    ),
-
-                    Container(
-                      child: TextButton(
-                        onPressed: (() {
-                          // Navigator.pushNamed(
-                          //   context, 
-                          //   login
-                          //   );
-                          showModalBottomSheet(
-                            context: context, 
-                            builder: ((context) => Center(
-                              child: ElevatedButton(
-                                onPressed: (() => Navigator.pop(context)),
-                                child: Text("close")),
-                            ))
-                          );
-                        }), 
-                        child: Text("Masuk", 
-                        style: TextStyle(color: white)
-                        ),
-                      ),
-                    ),
                   ],
                 )
               ],
             );
-          }
-          ),
+          }),
         ),
       ),
     );
