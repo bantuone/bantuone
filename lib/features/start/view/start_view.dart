@@ -57,18 +57,18 @@ class StartView extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          // Navigator.pushNamed(
-                          //   context, 
-                          //   register,
-                          //   );
-                          showModalBottomSheet(
-                            context: context, 
-                            builder: ((context) => Center(
-                              child: ElevatedButton(
-                                onPressed: (() => Navigator.pop(context)),
-                                child: Text("close")),
-                            ))
-                          );
+                          Navigator.pushNamed(
+                            context, 
+                            home,
+                            );
+                          // showModalBottomSheet(
+                          //   context: context, 
+                          //   builder: ((context) => Center(
+                          //     child: ElevatedButton(
+                          //       onPressed: (() => Navigator.pop(context)),
+                          //       child: Text("close")),
+                          //   ))
+                          // );
                         },
                         child: Text("Register",
                         style: TextStyle(color: black),
