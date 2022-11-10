@@ -1,4 +1,4 @@
-import 'package:bantuone/features/home/view/home.dart';
+import 'package:bantuone/features/home/view/home_view.dart';
 import 'package:bantuone/features/login/view/login_view.dart';
 import 'package:bantuone/features/order/view/order_view.dart';
 import 'package:bantuone/features/register/view/register_view.dart';
