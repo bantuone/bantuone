@@ -1,6 +1,7 @@
 import 'package:bantuone/core/constants/colors.dart';
 import 'package:bantuone/core/constants/image_path.dart';
 import 'package:bantuone/core/widgets/appbar.widget.dart';
+import 'package:bantuone/core/widgets/article.widget.dart';
 import 'package:bantuone/core/widgets/drawer.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,14 +15,13 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      extendBody: true,
       endDrawer: Drawer(
-        child: CustomDrawer(
-
-        ),
+        child: CustomDrawer(),
       ),
-      appBar: CustomAppBar(
-    
-      ),
+      appBar: CustomAppBar(),
+      body: customArticle(),
     );
   }
 }
