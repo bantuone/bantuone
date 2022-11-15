@@ -13,3 +13,6 @@ const String service = '$_path/icon_service.png';
 const String star = '$_path/icon_star.png';
 const String power = '$_path/icon_power.png';
 const String world = '$_path/icon_world.png';
+const String articleBanner1 = '$_path/article1.png';
+const String articleBanner2 = '$_path/article2.png';
+const String articleBanner3 = '$_path/article3.png';
