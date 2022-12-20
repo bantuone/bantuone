@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>796962857071-n6a4cn0vqv4oqbjghakifqea20g3dbda.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.796962857071-n6a4cn0vqv4oqbjghakifqea20g3dbda</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>796962857071-36k5bkefvka5c903k7pvpik2c300nphm.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDRTAWfKm5VdjcIHcq1_HH7piLnI25boPY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>796962857071</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.bantuone</string>
+	<key>PROJECT_ID</key>
+	<string>bantuone-sunib</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bantuone-sunib.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:796962857071:ios:1e2f670fb8e31403c32d9a</string>
+	<key>DATABASE_URL</key>
+	<string>https://bantuone-sunib-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
