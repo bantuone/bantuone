@@ -33,7 +33,7 @@ class CustomArticleBar extends StatelessWidget implements PreferredSizeWidget {
                   Container(
                     margin: EdgeInsets.only(right: 230),
                     child: Text(
-                      "Feed Article",
+                      "Feed Articles",
                       style: const TextStyle(fontSize: 18, color: white),
                     ),
                   )
