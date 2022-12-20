@@ -6,6 +6,7 @@ const String emergency_banner = '$_path/articles/emergency_section.png';
 const String article = '$_path/Article.png';
 const String profile = '$_path/icon_profile.png';
 const String history = '$_path/icon_history.png';
+const String arrow_back = '$_path/arrow_back.png';
 const String card = '$_path/icon_card.png';
 const String faq = '$_path/icon_faq.png';
 const String privacy = '$_path/icon_privacy.png';

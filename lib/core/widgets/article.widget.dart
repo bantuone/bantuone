@@ -3,6 +3,7 @@ import 'package:bantuone/core/constants/image_path.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:bantuone/features/feed_article/view/feed_article_view.dart';
 
 class customArticle extends StatelessWidget {
   List<String> imagesAsset = [articleBanner1, articleBanner2, articleBanner3];
@@ -44,10 +45,11 @@ class customArticle extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Container(
+                      margin: EdgeInsets.only(top: 8),
                       child: Text(
                         "Artikel lainnya",
                         style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 9,
                             fontWeight: FontWeight.bold,
                             color: white),
                       ),
@@ -69,48 +71,83 @@ class customArticle extends StatelessWidget {
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(64), bottomRight: Radius.circular(64))
               ),
             ),
- Container(
-          //color: darkBlue,
-          // decoration: BoxDecoration(
-          //   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(64),bottomRight: Radius.circular(64))
-          // ),
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              CarouselSlider(
-                options: CarouselOptions(
-                  height: 150.0,
-                  enableInfiniteScroll: true,
-                ),
-                carouselController: buttonCarouselController,
-                items: imagesAsset
-                    .map((item) => Container(
-                        padding: const EdgeInsets.only(left: 12),
-                        child: Stack(
-                          children: [
-                            Image(image: AssetImage(articleBanner1)),
-                            Container(
-                              margin: const EdgeInsets.only(
-                                  top: 108, left: 12, right: 12),
-                              child: Column(
-                                children: [
-                                  Text(
-                                    "Hal-hal yang perlu dilakukan saat memberikan bantuan pertama",
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                        color: white),
-                                  ),
-                                ],
+            Container(
+              //color: darkBlue,
+              // decoration: BoxDecoration(
+              //   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(64),bottomRight: Radius.circular(64))
+              // ),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      height: 150.0,
+                      enableInfiniteScroll: true,
+                    ),
+                    carouselController: buttonCarouselController,
+                    items: imagesAsset
+                        .map((item) => InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const FeedArticleView()),
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.only(left: 12),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(Radius.circular(20))
                               ),
-                            )
-                          ],
-                        )))
-                    .toList(),
+                              child: Stack(
+                                children: [
+                                Image(image: AssetImage(articleBanner1)),
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                      top: 100, left: 12, right: 12),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "Hal-hal yang perlu dilakukan saat memberikan bantuan pertama",
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: white),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                              ),
+                            )))
+                        .toList(),
+                    // items: imagesAsset
+                    //     .map((item) => Container(
+                    //         padding: const EdgeInsets.only(left: 12),
+                    //         child: Stack(
+                    //           children: [
+                    //             Image(image: AssetImage(articleBanner1)),
+                    //             Container(
+                    //               margin: const EdgeInsets.only(
+                    //                   top: 108, left: 12, right: 12),
+                    //               child: Column(
+                    //                 children: [
+                    //                   Text(
+                    //                     "Hal-hal yang perlu dilakukan saat memberikan bantuan pertama",
+                    //                     style: TextStyle(
+                    //                         fontSize: 12,
+                    //                         fontWeight: FontWeight.bold,
+                    //                         color: white),
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //             )
+                    //           ],
+                    //         )))
+                    //     .toList(),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
+            ),
           ],
         ),
 
