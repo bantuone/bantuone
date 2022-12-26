@@ -9,6 +9,7 @@ import 'package:bantuone/core/route/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -35,13 +36,13 @@ class _MyAppState extends State<MyApp> {
       minTextAdapt: true,
       builder: (context, child) => MultiProvider(
         providers: providers,
-        child: MaterialApp(
+        child: GetMaterialApp(
           home: AuthService().handleAuthState(),
           debugShowCheckedModeBanner: false,
           title: 'bantuone',
           theme: themeData,
           onGenerateRoute: CustomRouter.generateRoute,
-          initialRoute: start,
+          initialRoute: home,
         ),
         ),
     );

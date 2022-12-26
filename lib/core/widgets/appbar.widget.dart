@@ -1,6 +1,9 @@
 import 'package:bantuone/core/constants/colors.dart';
 import 'package:bantuone/core/constants/image_path.dart';
+import 'package:bantuone/features/history/history_binding.dart';
+import 'package:bantuone/features/history/history_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -20,7 +23,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   IconButton(
                     padding: EdgeInsets.all(10),
-                    onPressed: () => Scaffold.of(context).openDrawer(),
+                    onPressed: () => Get.to(() => const HistoryScreen(),
+                        binding: HistoryBinding()),
                     icon: Image.asset(history),
                     splashRadius: 20.0,
                   ),
@@ -67,4 +71,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight + 10);
+
+  static AppBar standardAppBar(String title) {
+    return AppBar(
+      title: Text(title,
+          style: const TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: white)),
+      centerTitle: true,
+      backgroundColor: darkBlue,
+    );
+  }
 }

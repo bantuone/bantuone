@@ -1,10 +1,15 @@
 import 'package:bantuone/core/constants/colors.dart';
+import 'package:bantuone/features/pick_destination/pick_destination_binding.dart';
+import 'package:bantuone/features/pick_destination/pick_destination_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class currLoct extends StatefulWidget {
-  const currLoct({Key? key}) : super(key: key);
+  final String type;
+
+  const currLoct({Key? key, required this.type}) : super(key: key);
 
   @override
   _currLoct createState() => _currLoct();
@@ -12,6 +17,8 @@ class currLoct extends StatefulWidget {
 
 class _currLoct extends State<currLoct> {
   late GoogleMapController googleMapController;
+
+  Position? position;
 
   static const CameraPosition initialCameraPosition = CameraPosition(
       target: LatLng(37.42796133580664, -122.085749655962), zoom: 14);
@@ -22,34 +29,52 @@ class _currLoct extends State<currLoct> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lokasi Terdekat",
+        title: const Text("Lokasi Sekarang",
             style: TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: white)),
         centerTitle: true,
         backgroundColor: darkBlue,
       ),
-      body: GoogleMap(
-        initialCameraPosition: initialCameraPosition,
-        markers: markers,
-        zoomControlsEnabled: false,
-        mapType: MapType.normal,
-        onMapCreated: (GoogleMapController controller) async {
-          googleMapController = controller;
-          Position position = await _determinePosition();
+      body: Column(
+        children: [
+          Expanded(
+            child: GoogleMap(
+              initialCameraPosition: initialCameraPosition,
+              markers: markers,
+              zoomControlsEnabled: false,
+              mapType: MapType.normal,
+              onMapCreated: (GoogleMapController controller) async {
+                googleMapController = controller;
+                position = await _determinePosition();
 
-          googleMapController.animateCamera(CameraUpdate.newCameraPosition(
-              CameraPosition(
-                  target: LatLng(position.latitude, position.longitude),
-                  zoom: 14)));
+                googleMapController.animateCamera(
+                    CameraUpdate.newCameraPosition(CameraPosition(
+                        target: LatLng(position!.latitude, position!.longitude),
+                        zoom: 14)));
 
-          markers.clear();
+                markers.clear();
 
-          markers.add(Marker(
-              markerId: const MarkerId('currentLocation'),
-              position: LatLng(position.latitude, position.longitude)));
+                markers.add(Marker(
+                    markerId: const MarkerId('currentLocation'),
+                    position: LatLng(position!.latitude, position!.longitude)));
 
-          setState(() {});
-        },
+                setState(() {});
+              },
+            ),
+          ),
+          Visibility(
+            visible: position != null,
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () => Get.to(() => PickDestinationScreen(),
+                    arguments: {'position': position, 'type': widget.type},
+                    binding: PickDestinationBinding()),
+                child: const Text('Pilih lokasi tujuan'),
+              ),
+            ),
+          )
+        ],
       ),
       // floatingActionButton: FloatingActionButton.extended(
       //   onPressed: () async {

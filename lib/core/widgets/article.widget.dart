@@ -125,7 +125,7 @@ class customArticle extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        currLoct()));
+                                        currLoct(type: "Rumah Sakit",)));
                           },
                           icon: Image.asset(rs)),
                     ],
