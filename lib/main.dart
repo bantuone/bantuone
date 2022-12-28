@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
           title: 'bantuone',
           theme: themeData,
           onGenerateRoute: CustomRouter.generateRoute,
-          initialRoute: home,
+          initialRoute: login,
         ),
         ),
     );
