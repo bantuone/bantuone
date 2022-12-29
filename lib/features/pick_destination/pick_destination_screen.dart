@@ -15,7 +15,7 @@ class PickDestinationScreen extends GetView<PickDestinationController> {
     final position = args['position'];
     final type = args['type'];
 
-    controller.getAllDestinations(type);
+    controller.getAllDestinations(position, type);
 
     return Scaffold(
       appBar: CustomAppBar.standardAppBar('Pilih Tujuan'),

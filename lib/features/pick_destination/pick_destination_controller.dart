@@ -4,11 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class PickDestinationController extends GetxController {
   final destinations = <Map<String, dynamic>>[].obs;
 
-  getAllDestinations(String type) {
+  getAllDestinations(Position userPosition, String type) {
     destinations.clear();
 
     final firestore = FirebaseFirestore.instance;
@@ -19,10 +20,30 @@ class PickDestinationController extends GetxController {
         .then((value) {
       for (var element in value.docChanges) {
         final data = element.doc.data();
-        data!['id'] = element.doc.id;
+        final latLng = data!['lat/lng'].toString().split('/');
+        final lat = double.parse(latLng.first.toString());
+        final lng = double.parse(latLng.last.toString());
+
+        final distance = Geolocator.distanceBetween(
+          userPosition.latitude,
+          userPosition.longitude,
+          lat,
+          lng,
+        );
+
+        data['id'] = element.doc.id;
+        data['distance'] = distance;
 
         destinations.add(data);
       }
+      destinations.sort(
+        (a, b) {
+          double distanceA = a['distance'];
+          double distanceB = b['distance'];
+
+          return distanceA.compareTo(distanceB);
+        },
+      );
     }).catchError((e) {
       e as FirebaseException;
 
@@ -30,6 +51,28 @@ class PickDestinationController extends GetxController {
       Get.snackbar('Error', e.message.toString());
     });
   }
+  // getAllDestinations(String type) {
+  //   destinations.clear();
+
+  //   final firestore = FirebaseFirestore.instance;
+  //   firestore
+  //       .collection('services')
+  //       .where('type', isEqualTo: type)
+  //       .get()
+  //       .then((value) {
+  //     for (var element in value.docChanges) {
+  //       final data = element.doc.data();
+  //       data!['id'] = element.doc.id;
+
+  //       destinations.add(data);
+  //     }
+  //   }).catchError((e) {
+  //     e as FirebaseException;
+
+  //     Get.back();
+  //     Get.snackbar('Error', e.message.toString());
+  //   });
+  // }
 
   order(Position position, Map<String, dynamic> destination) {
     final auth = FirebaseAuth.instance;
