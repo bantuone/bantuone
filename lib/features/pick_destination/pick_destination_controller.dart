@@ -34,6 +34,7 @@ class PickDestinationController extends GetxController {
   order(Position position, Map<String, dynamic> destination) {
     final auth = FirebaseAuth.instance;
     final userId = auth.currentUser!.uid;
+    final userPhone = auth.currentUser!.phoneNumber;
     final userName = auth.currentUser!.displayName;
 
     final firestore = FirebaseFirestore.instance;
@@ -42,9 +43,11 @@ class PickDestinationController extends GetxController {
       'userId': userId,
       'userLat': position.latitude,
       'userLng': position.longitude,
+      'userPhone': userPhone,
       'destinationId': destination['id'],
       'destinationName': destination['name'],
       'destinationAddress': destination['address'],
+      'destinationPhone': destination['phone'],
       'destinationLat': double.parse(latLng.first),
       'destinationLng': double.parse(latLng.last),
       'step': 1,

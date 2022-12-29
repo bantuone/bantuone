@@ -2,6 +2,7 @@ import 'package:bantuone/features/home/view/home_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OrderController extends GetxController {
   final detail = <String, dynamic>{}.obs;
@@ -88,5 +89,14 @@ class OrderController extends GetxController {
     }).catchError((e) {
       Get.snackbar('Error', e.message.toString());
     });
+  }
+
+  callLocation() {
+    if (detail['destinationPhone'].toString().isNotEmpty) {
+      final uri = Uri.parse('tel:+62 ${detail['destinationPhone']}');
+      launchUrl(uri);
+    } else {
+      Get.snackbar('Error', 'Phone number not found!');
+    }
   }
 }

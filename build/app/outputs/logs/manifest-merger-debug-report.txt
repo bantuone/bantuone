@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:7:4-39:19
+INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:29:4-61:19
 MERGED from [:firebase_auth] B:\AndroidStudioProjects\bantuone\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:firebase_auth] B:\AndroidStudioProjects\bantuone\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:cloud_firestore] B:\AndroidStudioProjects\bantuone\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
@@ -66,11 +66,11 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\fe
 	android:name
 		INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
-INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
-INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
-INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
-MERGED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
+INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
+INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
+INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
+MERGED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
 MERGED from [:firebase_auth] B:\AndroidStudioProjects\bantuone\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:cloud_firestore] B:\AndroidStudioProjects\bantuone\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] B:\AndroidStudioProjects\bantuone\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
@@ -144,11 +144,11 @@ INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\debug\AndroidMan
 		INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml
-		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
+		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
 		INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
 		INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml
-		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-40:12
+		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:1-62:12
 		INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -184,6 +184,30 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:5:5-81
 	android:name
 		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:5:22-78
+queries
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:7:5-28:15
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gradle\caches\transforms-3\dd0d2217c709d3be1733acaa83aa75a0\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+MERGED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gradle\caches\transforms-3\dd0d2217c709d3be1733acaa83aa75a0\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+intent#action:name:android.intent.action.VIEW+data:scheme:https
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:9:9-12:18
+action#android.intent.action.VIEW
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:10:13-65
+	android:name
+		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:10:21-62
+data
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:11:13-44
+	android:scheme
+		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:11:19-41
+intent#action:name:android.intent.action.SEND+data:mimeType:*/*
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:14:9-17:18
+action#android.intent.action.SEND
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:15:13-65
+	android:name
+		ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:15:21-62
+intent#action:name:android.intent.action.VIEW+data:scheme:sms
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:19:9-22:18
+intent#action:name:android.intent.action.VIEW+data:scheme:tel
+ADDED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml:24:9-27:18
 uses-sdk
 INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from B:\AndroidStudioProjects\bantuone\android\app\src\main\AndroidManifest.xml
@@ -444,10 +468,6 @@ ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\cac
 		ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:28:13-80
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
 ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:33:13-43:29
-action#android.intent.action.VIEW
-ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
 category#android.intent.category.DEFAULT
 ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
 	android:name
@@ -456,14 +476,6 @@ category#android.intent.category.BROWSABLE
 ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
-data
-ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
-	android:path
-		ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
-	android:host
-		ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
-	android:scheme
-		ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
 activity#com.google.firebase.auth.internal.RecaptchaActivity
 ADDED from [com.google.firebase:firebase-auth:21.1.0] C:\Users\fenar\.gradle\caches\transforms-3\022b72b7187255eca7afd25c2c2ff9c7\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:45:9-62:20
 	android:excludeFromRecents
@@ -540,8 +552,6 @@ ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gr
 		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gradle\caches\transforms-3\dd0d2217c709d3be1733acaa83aa75a0\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
 	android:required
 		ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gradle\caches\transforms-3\dd0d2217c709d3be1733acaa83aa75a0\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
-queries
-ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gradle\caches\transforms-3\dd0d2217c709d3be1733acaa83aa75a0\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
 package#com.google.android.apps.maps
 ADDED from [com.google.android.gms:play-services-maps:18.1.0] C:\Users\fenar\.gradle\caches\transforms-3\dd0d2217c709d3be1733acaa83aa75a0\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
 	android:name
