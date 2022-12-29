@@ -30,13 +30,13 @@ class CustomDrawer extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              DrawerItem(
-                  name: 'Metode Pembayaran',
-                  icon: Icons.credit_card,
-                  onPressed: () => null),
-              const SizedBox(
-                height: 20,
-              ),
+              // DrawerItem(
+              //     name: 'Metode Pembayaran',
+              //     icon: Icons.credit_card,
+              //     onPressed: () => null),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               DrawerItem(
                   name: 'Bantuan', icon: Icons.help, onPressed: () => null),
               const SizedBox(

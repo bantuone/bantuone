@@ -65,7 +65,7 @@ class customArticle extends StatelessWidget {
                     options: CarouselOptions(
                         height: 200,
                         enableInfiniteScroll: true,
-                        //autoPlay: true,
+                        autoPlay: true,
                         aspectRatio: 2,
                         viewportFraction: 0.9,
                         initialPage: 2,

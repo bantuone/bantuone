@@ -95,7 +95,7 @@ class OrderScreen extends GetView<OrderController> {
                           child: Row(
                             children: [
                               const Expanded(
-                                  child: Text('Menuju titik jemput')),
+                                  child: Text('Hubungi bantuan sekarang')),
                               Container(
                                 width: 1,
                                 height: 24,
@@ -209,20 +209,22 @@ class OrderScreen extends GetView<OrderController> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Batalkan Pesanaan?'),
+            const Text('Batalkan Pesanan?', style: TextStyle(color: darkBlue, fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,),
             const SizedBox(height: 16),
             Row(
               children: [
                 Expanded(
                   child: TextButton(
                     onPressed: () => Get.back(),
-                    child: const Text('Tidak'),
+                    child: const Text('TIDAK', style: TextStyle(color: darkBlue, fontSize: 15, fontWeight: FontWeight.bold),),
                   ),
                 ),
                 Expanded(
                   child: TextButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all(darkBlue)),
                     onPressed: () => controller.cancelOrder(),
-                    child: const Text('Ya'),
+                    child: const Text('YA', style: TextStyle(color: white, fontSize: 15, fontWeight: FontWeight.bold),),
                   ),
                 ),
               ],

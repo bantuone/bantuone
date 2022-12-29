@@ -32,10 +32,10 @@ class OrderController extends GetxController {
 
       if (data!['step'] == -1) {
         Get.back();
-        Get.snackbar('Alert', 'Order canceled!');
+        Get.snackbar('PERHATIAN', 'Order di batalkan!');
       } else if (data['step'] == -2) {
         Get.back();
-        Get.snackbar('Alert', 'Order rejected!');
+        Get.snackbar('PERHATIAN', 'Order di tolak!');
       }
 
       data['id'] = value.id;

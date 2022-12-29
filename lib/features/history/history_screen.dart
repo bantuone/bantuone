@@ -1,3 +1,4 @@
+import 'package:bantuone/core/constants/colors.dart';
 import 'package:bantuone/core/widgets/appbar.widget.dart';
 import 'package:bantuone/features/history/history_controller.dart';
 import 'package:bantuone/features/order/order_binding.dart';
@@ -34,7 +35,7 @@ class HistoryScreen extends GetView<HistoryController> {
                               title: Row(
                                 children: [
                                   Text(
-                                      'Destination: ${history['destinationName']}')
+                                      '${history['destinationName']}',style: TextStyle(fontWeight: FontWeight.bold),)
                                 ],
                               ),
                               subtitle:
@@ -42,13 +43,13 @@ class HistoryScreen extends GetView<HistoryController> {
                             ),
                             const SizedBox(height: 8),
                             Container(
-                              padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+                              padding: const EdgeInsets.fromLTRB(20, 0, 12, 12),
                               child: Text(
                                 history['step'] > -1
                                     ? controller.msgs[history['step'] - 1]
                                     : history['step'] == -1
                                         ? 'Canceled'
-                                        : 'Rejected',
+                                        : 'Rejected', style: TextStyle(fontWeight: FontWeight.bold, color: darkBlue),
                               ),
                             ),
                           ],

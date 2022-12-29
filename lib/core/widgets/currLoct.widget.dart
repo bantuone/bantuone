@@ -67,6 +67,9 @@ class _currLoct extends State<currLoct> {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: green
+                ),
                 onPressed: () => Get.to(() => PickDestinationScreen(),
                     arguments: {'position': position, 'type': widget.type},
                     binding: PickDestinationBinding()),

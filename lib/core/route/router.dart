@@ -1,6 +1,6 @@
 import 'package:bantuone/features/home/view/home_view.dart';
 
-import 'package:bantuone/features/order/view/order_view.dart';
+
 
 import 'package:bantuone/features/start/view/start_view.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +14,6 @@ class CustomRouter {
       case login:
       case home:
         return MaterialPageRoute(builder: (_) => const HomeView());
-      case order:
-        return MaterialPageRoute(builder: (_) => const OrderView());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

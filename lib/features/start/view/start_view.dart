@@ -33,7 +33,7 @@ class StartView extends StatelessWidget {
                     Container(
                       width: 300.w,
                       child: Text(
-                          "Kesalamatan dan kenyamanan kamu merupakan prioritas nomor 1 kami!",
+                          "Keselamatan dan kenyamanan anda merupakan prioritas nomor 1 kami!",
                           textAlign: TextAlign.center,
                           style: TextStyle(color: greyBlue, fontWeight: FontWeight.w500)),
                     ),

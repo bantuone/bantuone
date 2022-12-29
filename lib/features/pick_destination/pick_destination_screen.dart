@@ -1,3 +1,4 @@
+import 'package:bantuone/core/constants/colors.dart';
 import 'package:bantuone/core/widgets/appbar.widget.dart';
 import 'package:bantuone/features/order/order_binding.dart';
 import 'package:bantuone/features/order/order_screen.dart';
@@ -18,7 +19,7 @@ class PickDestinationScreen extends GetView<PickDestinationController> {
     controller.getAllDestinations(position, type);
 
     return Scaffold(
-      appBar: CustomAppBar.standardAppBar('Pilih Tujuan'),
+      appBar: CustomAppBar.standardAppBar('Pilih Bantuan'),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Obx(
@@ -38,9 +39,9 @@ class PickDestinationScreen extends GetView<PickDestinationController> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Name: ${destination['name']}'),
+                        Text('${destination['name']}',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15,color: darkBlue),),
                         const SizedBox(height: 8),
-                        Text('Address: ${destination['address']}'),
+                        Text('${destination['address']}', style: TextStyle(color: midBlue),),
                       ],
                     ),
                   ),
