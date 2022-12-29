@@ -16,43 +16,50 @@ class HistoryScreen extends GetView<HistoryController> {
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Obx(
-          () => ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(height: 8),
-            itemCount: controller.histories.length,
-            itemBuilder: (context, index) {
-              final history = controller.histories[index];
-              return Card(
-                child: InkWell(
-                  onTap: () => Get.to(() => const OrderScreen(),
-                      binding: OrderBinding(), arguments: history['id']),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ListTile(
-                        title: Row(
+          () => controller.histories.isNotEmpty
+              ? ListView.separated(
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 8),
+                  itemCount: controller.histories.length,
+                  itemBuilder: (context, index) {
+                    final history = controller.histories[index];
+                    return Card(
+                      child: InkWell(
+                        onTap: () => Get.to(() => const OrderScreen(),
+                            binding: OrderBinding(), arguments: history['id']),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Destination: ${history['destinationName']}')
+                            ListTile(
+                              title: Row(
+                                children: [
+                                  Text(
+                                      'Destination: ${history['destinationName']}')
+                                ],
+                              ),
+                              subtitle:
+                                  Text('${history['destinationAddress']}'),
+                            ),
+                            const SizedBox(height: 8),
+                            Container(
+                              padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+                              child: Text(
+                                history['step'] > -1
+                                    ? controller.msgs[history['step'] - 1]
+                                    : history['step'] == -1
+                                        ? 'Canceled'
+                                        : 'Rejected',
+                              ),
+                            ),
                           ],
                         ),
-                        subtitle: Text('${history['destinationAddress']}'),
                       ),
-                      const SizedBox(height: 8),
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-                        child: Text(
-                          history['step'] > -1
-                              ? controller.msgs[history['step'] - 1]
-                              : history['step'] == -1
-                                  ? 'Canceled'
-                                  : 'Rejected',
-                        ),
-                      ),
-                    ],
-                  ),
+                    );
+                  },
+                )
+              : const Center(
+                  child: Text('History Pemesanan Kosong'),
                 ),
-              );
-            },
-          ),
         ),
       ),
     );

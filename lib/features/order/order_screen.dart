@@ -1,4 +1,5 @@
 import 'package:bantuone/core/constants/colors.dart';
+import 'package:bantuone/features/home/view/home_view.dart';
 import 'package:bantuone/features/order/order_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,108 +11,124 @@ class OrderScreen extends GetView<OrderController> {
   Widget build(BuildContext context) {
     controller.getDetail();
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(''),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        foregroundColor: Colors.black,
+    return WillPopScope(
+      onWillPop: () async => await Get.offAll(
+        () => const HomeView(),
       ),
-      backgroundColor: Colors.white,
-      body: Obx(
-        () => controller.detail.isEmpty
-            ? const SizedBox()
-            : Padding(
-                padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
-                child: ListView(
-                  children: [
-                    Image.asset(
-                      controller.getImage(),
-                      width: 96,
-                      height: 96,
-                    ),
-                    const SizedBox(height: 40),
-                    Text(
-                      controller.getStepMsg(),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          color: darkBlue,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    const SizedBox(height: 16),
-                    const Divider(),
-                    _buildLocation(),
-                    const Divider(),
-                    const SizedBox(height: 24),
-                    Row(
-                      children: [
-                        Container(
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle, color: darkBlue),
-                          child: const Icon(
-                            Icons.person,
-                            color: Colors.white,
-                            size: 56,
-                          ),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(''),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          foregroundColor: Colors.black,
+        ),
+        backgroundColor: Colors.white,
+        body: Obx(
+          () => controller.detail.isEmpty
+              ? const SizedBox()
+              : Padding(
+                  padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
+                  child: ListView(
+                    children: [
+                      Image.asset(
+                        controller.getImage(),
+                        width: 96,
+                        height: 96,
+                      ),
+                      const SizedBox(height: 40),
+                      Text(
+                        controller.getStepMsg(),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 18,
+                            color: darkBlue,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(height: 16),
+                      const Divider(),
+                      _buildLocation(),
+                      const Divider(),
+                      const SizedBox(height: 24),
+                      Visibility(
+                        visible: controller.detail['step'] < 5,
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                  shape: BoxShape.circle, color: darkBlue),
+                              child: const Icon(
+                                Icons.person,
+                                color: Colors.white,
+                                size: 56,
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    controller.detail['destinationName'],
+                                    style: const TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  Text(
+                                    controller.detail['destinationAddress'],
+                                    style: const TextStyle(color: Colors.grey),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                      const SizedBox(height: 16),
+                      Visibility(
+                        visible: controller.detail['step'] < 5,
+                        child: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade300,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Row(
                             children: [
-                              Text(
-                                controller.detail['destinationName'],
-                                style: const TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w500),
+                              const Expanded(
+                                  child: Text('Menuju titik jemput')),
+                              Container(
+                                width: 1,
+                                height: 24,
+                                color: Colors.black,
                               ),
-                              Text(
-                                controller.detail['destinationAddress'],
-                                style: const TextStyle(color: Colors.grey),
-                              ),
+                              const SizedBox(width: 16),
+                              const Icon(Icons.call_outlined)
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Row(
-                        children: [
-                          const Expanded(child: Text('Menuju titik jemput')),
-                          Container(
-                            width: 1,
-                            height: 24,
-                            color: Colors.black,
-                          ),
-                          const SizedBox(width: 16),
-                          const Icon(Icons.call_outlined)
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 32),
-                    Visibility(
-                      visible: controller.detail['step'] < 5,
-                      child: SizedBox(
+                      const SizedBox(height: 32),
+                      SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () => _showDialog(context),
+                          onPressed: () => controller.detail['step'] == 5
+                              ? Get.offAll(() => const HomeView())
+                              : _showDialog(context),
                           style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.red),
+                            backgroundColor: MaterialStateProperty.all(
+                                controller.detail['step'] == 5
+                                    ? darkBlue
+                                    : Colors.red),
                           ),
-                          child: const Text('Batalkan Pesanan'),
+                          child: Text(controller.detail['step'] == 5
+                              ? 'Selesai'
+                              : 'Batalkan Pesanan'),
                         ),
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
+        ),
       ),
     );
   }
@@ -201,7 +218,7 @@ class OrderScreen extends GetView<OrderController> {
                 ),
                 Expanded(
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () => controller.cancelOrder(),
                     child: const Text('Ya'),
                   ),
                 ),

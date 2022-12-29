@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class customArticle extends StatelessWidget {
@@ -124,8 +125,9 @@ class customArticle extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        currLoct(type: "Rumah Sakit",)));
+                                    builder: (BuildContext context) => currLoct(
+                                          type: "Rumah Sakit",
+                                        )));
                           },
                           icon: Image.asset(rs)),
                     ],
@@ -154,7 +156,11 @@ class customArticle extends StatelessWidget {
                     children: [
                       IconButton(
                           padding: new EdgeInsets.all(0.0),
-                          onPressed: () => Scaffold.of(context).openDrawer(),
+                          onPressed: () => Get.to(
+                                () => currLoct(
+                                  type: "Damkar",
+                                ),
+                              ),
                           icon: Image.asset(damkar)),
                     ],
                   ),
@@ -182,7 +188,11 @@ class customArticle extends StatelessWidget {
                     children: [
                       IconButton(
                           padding: new EdgeInsets.all(0.0),
-                          onPressed: () => Scaffold.of(context).openDrawer(),
+                          onPressed: () => Get.to(
+                                () => currLoct(
+                                  type: "Bengkel",
+                                ),
+                              ),
                           icon: Image.asset(bengkel)),
                     ],
                   ),
