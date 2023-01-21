@@ -18,3 +18,4 @@ const String emergency = '$_path/emergency.png';
 const String articleBanner1 = '$_path/article1.png';
 const String articleBanner2 = '$_path/article2.png';
 const String articleBanner3 = '$_path/article3.png';
+const String arrow_back = '$_path/arrow_back.png';
