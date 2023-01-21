@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bantuone/core/constants/colors.dart';
 import 'package:bantuone/core/constants/image_path.dart';
 import 'package:bantuone/core/widgets/currLoct.widget.dart';
@@ -5,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:bantuone/features/feed_article/view/feed_article_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -72,7 +75,15 @@ class customArticle extends StatelessWidget {
                         enlargeCenterPage: true),
                     carouselController: buttonCarouselController,
                     items: imgList
-                        .map((item) => Container(
+                        .map((item) => InkWell(
+                          onTap: () {
+                            log('masuk');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const FeedArticleView()),
+                            );
+                          },
+                          child: Container(
                             padding: const EdgeInsets.only(left: 12, right: 12),
                             child: Stack(
                               children: [
@@ -96,8 +107,36 @@ class customArticle extends StatelessWidget {
                                   ),
                                 )
                               ],
-                            )))
+                            )),
+                        ))
                         .toList(),
+                    // items: imgList
+                    //     .map((item) => Container(
+                    //         padding: const EdgeInsets.only(left: 12, right: 12),
+                    //         child: Stack(
+                    //           children: [
+                    //             ClipRRect(
+                    //               borderRadius: BorderRadius.circular(10),
+                    //               child: Image(image: AssetImage(item)),
+                    //             ),
+                    //             Container(
+                    //               margin: const EdgeInsets.only(
+                    //                   top: 120, left: 12, right: 12),
+                    //               child: Column(
+                    //                 children: [
+                    //                   Text(
+                    //                     "Hal-hal yang perlu dilakukan saat memberikan bantuan pertama",
+                    //                     style: TextStyle(
+                    //                         fontSize: 11,
+                    //                         fontWeight: FontWeight.bold,
+                    //                         color: white),
+                    //                   ),
+                    //                 ],
+                    //               ),
+                    //             )
+                    //           ],
+                    //         )))
+                    //     .toList(),
                   ),
                 ],
               ),
