@@ -317,7 +317,7 @@ class Expansiontile extends StatelessWidget {
                     FlutterPhoneDirectCaller.callNumber('+110');
                     //launch('tel:+110');
                   }),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -334,7 +334,7 @@ class Expansiontile extends StatelessWidget {
                 subtitle: Text('118 atau 119'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -351,7 +351,7 @@ class Expansiontile extends StatelessWidget {
                 subtitle: Text('115'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -368,7 +368,7 @@ class Expansiontile extends StatelessWidget {
                 subtitle: Text('129'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -385,7 +385,7 @@ class Expansiontile extends StatelessWidget {
                 subtitle: Text('123'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -399,10 +399,10 @@ class Expansiontile extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: darkBlue)),
-                subtitle: Text('113 atau 1131'),
+                subtitle: Text('113'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -419,7 +419,7 @@ class Expansiontile extends StatelessWidget {
                 subtitle: Text('112'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -433,10 +433,10 @@ class Expansiontile extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: darkBlue)),
-                subtitle: Text('(021)7256526, (021)7257826, (021)7221810'),
+                subtitle: Text('(021)7256526'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),
@@ -450,10 +450,10 @@ class Expansiontile extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: darkBlue)),
-                subtitle: Text('(021)7256526, (021)7257826, (021)7221810'),
+                subtitle: Text('(021)7256526'),
                 trailing: TextButton(
                   onPressed: (() {}),
-                  child: Text("Call", style: TextStyle(color: green)),
+                  child: Text("Hubungi", style: TextStyle(color: green)),
                   style: TextButton.styleFrom(
                       padding:
                           EdgeInsets.symmetric(horizontal: 32, vertical: 12),

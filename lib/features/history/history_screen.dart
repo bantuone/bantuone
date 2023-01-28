@@ -48,8 +48,8 @@ class HistoryScreen extends GetView<HistoryController> {
                                 history['step'] > -1
                                     ? controller.msgs[history['step'] - 1]
                                     : history['step'] == -1
-                                        ? 'Canceled'
-                                        : 'Rejected', style: TextStyle(fontWeight: FontWeight.bold, color: darkBlue),
+                                        ? 'Dibatalkan'
+                                        : 'Ditolak', style: TextStyle(fontWeight: FontWeight.bold, color: darkBlue),
                               ),
                             ),
                           ],
