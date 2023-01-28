@@ -13,7 +13,7 @@ class HistoryScreen extends GetView<HistoryController> {
   Widget build(BuildContext context) {
     // controller.getHistories();
     return Scaffold(
-      appBar: CustomAppBar.standardAppBar('History'),
+      appBar: CustomAppBar.standardAppBar('Riwayat Pemesanan'),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Obx(
@@ -59,7 +59,7 @@ class HistoryScreen extends GetView<HistoryController> {
                   },
                 )
               : const Center(
-                  child: Text('History Pemesanan Kosong'),
+                  child: Text('Riwayat Pemesanan Kosong'),
                 ),
         ),
       ),

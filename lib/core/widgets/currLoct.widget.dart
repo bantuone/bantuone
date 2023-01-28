@@ -29,7 +29,7 @@ class _currLoct extends State<currLoct> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lokasi Sekarang",
+        title: const Text("Lokasi Saat Ini",
             style: TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, color: white)),
         centerTitle: true,

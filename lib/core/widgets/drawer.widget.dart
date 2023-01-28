@@ -71,13 +71,13 @@ class CustomDrawer extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              DrawerItem(
-                  name: 'Setting', icon: Icons.settings, onPressed: () => null),
+              // DrawerItem(
+              //     name: 'Setting', icon: Icons.settings, onPressed: () => null),
               const SizedBox(
                 height: 20,
               ),
               DrawerItem(
-                  name: 'Log out',
+                  name: 'Keluar',
                   icon: Icons.logout,
                   onPressed: () => CustomAlertDialog(context)),
             ],
