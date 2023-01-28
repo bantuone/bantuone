@@ -64,12 +64,12 @@ class feedArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //backgroundColor: black,
+        backgroundColor: black,
         body: Column(
           children: <Widget>[
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.only(top: 90),
+                //padding: const EdgeInsets.only(top: 90),
                 itemCount: articleFeeds.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ElevatedButton(
@@ -80,6 +80,7 @@ class feedArticle extends StatelessWidget {
                       );
                     }, 
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: black,
                       padding: EdgeInsets.zero,
                       minimumSize: Size(50, 30),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -93,9 +94,10 @@ class feedArticle extends StatelessWidget {
                         ),
                         Container(
                           margin: const EdgeInsets.only(
-                              top: 100, left: 12, right: 12),
+                              top: 120, left: 12, right: 12),
                           child: Column(
                             children: <Widget>[
+                              SizedBox(height: 50,),
                               Text(
                                 '${articleFeeds[index].title}',
                                 style: TextStyle(
@@ -103,6 +105,7 @@ class feedArticle extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     color: white),
                               ),
+                              SizedBox(height: 20,),
                               Text(
                                 '${articleFeeds[index].writer}, estimasi baca ${articleFeeds[index].time} menit',
                                 style: TextStyle(
@@ -114,7 +117,8 @@ class feedArticle extends StatelessWidget {
                           ),
                         )
                       ],
-                    ));
+                    )
+                    );
                 }
               ),
             ),

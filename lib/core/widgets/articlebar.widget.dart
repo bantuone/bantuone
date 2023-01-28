@@ -17,7 +17,7 @@ class CustomArticleBar extends StatelessWidget implements PreferredSizeWidget {
               padding: EdgeInsets.only(left: 10, right: 10),
               height: kToolbarHeight,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
                     padding: EdgeInsets.all(16),
@@ -30,13 +30,18 @@ class CustomArticleBar extends StatelessWidget implements PreferredSizeWidget {
                     icon: Image.asset(arrow_back),
                     splashRadius: 20.0,
                   ),
-                  Container(
-                    margin: EdgeInsets.only(right: 230),
-                    child: Text(
-                      "Feed Article",
+                  //SizedBox(width: 70,),
+                  Text(
+                      "Feed Article", textAlign: TextAlign.center,
                       style: const TextStyle(fontSize: 18, color: white),
                     ),
-                  )
+                  // Container(
+                  //   //margin: EdgeInsets.only(right: 230),
+                  //   child: Text(
+                  //     "Feed Article", textAlign: TextAlign.center,
+                  //     style: const TextStyle(fontSize: 18, color: white),
+                  //   ),
+                  // )
                 ],
               ),
             ),
@@ -73,5 +78,5 @@ class CustomArticleBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight + 10);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight + 5);
 }
