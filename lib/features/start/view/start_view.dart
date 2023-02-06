@@ -14,6 +14,9 @@ class StartView extends StatelessWidget {
     return Scaffold(
       backgroundColor: darkBlue,
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage(bg), fit: BoxFit.fill)
+        ),
         child: Center(
           child: Consumer(builder: (ctx, vm, _) {
             return Column(
